@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>demo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <style media="screen">
+      * { margin: 0; padding: 0; }
+      ul { list-style: none;}
+      .container li { overflow: hidden; height: 100px; border-bottom: 1px solid #e5e5e5; padding-bottom: 20px;  padding-top: 20px;}
+      .left {
+        float: left;
+        width: 30%;
+      }
+      .right {
+        float: right;
+        width: 67%;
+        padding-top: 20px;
+      }
+      .right h1 {
+        font-size: 18px;
+      }
+      .right p {
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="container">
+      <!-- <li>
+        <img class='left' src="https://expressstorage.oss-cn-hangzhou.aliyuncs.com/upload/indexImg/android/android_20160317195600.png?random=0.4161649353336543">
+        <div class='right'>
+          <h1>啊就是快乐的卷发</h1>
+          <p1>阿斯顿肌肤；啊开始减肥的拉萨飞</p1>
+        </div>
+      </li> -->
+    </ul>
+    <script src="./jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $.ajax({
+        type: 'GET',
+        url: 'https://dev-api.otosaas.com/xianhua/v1/categories',
+        data: { city: '上海' }
+      }).then(function(res){
+        var code = res.code
+        var data = res.data
+        if (code === 0) {
+          for(var i = 0; i < data.length; i++) {
+            $('<li>' +
+            '<img class="left" src='+ data[i].categoryIcon +'>' +
+            '<div class="right">' +
+            '<h1>'+ data[i].categoryName +'</h1>' +
+            '<p1>'+ data[i].priceDescription +'</p1>' +
+            '</div>'+
+            '</li>').appendTo($('.container'))
+          }
+        } else {
+          alert('请求失败')
+        }
+      })
+    </script>
+  </body>
+</html>
