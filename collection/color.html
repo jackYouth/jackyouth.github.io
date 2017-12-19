@@ -103,6 +103,12 @@
       document.querySelector('.mask span').onclick = function() {
         document.querySelector('.mask').style.display = 'none'
       }
+
+      document.querySelector('.mask').addEventListener('touchmove', handleMove, false)
+      function handleMove(e) {
+        const evt = e ? e: window.event
+        evt.preventDefault()
+      }
     </script>
   </body>
 </html>
