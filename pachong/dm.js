@@ -11,8 +11,7 @@ const url1 = 'http://www.diaomie.com/tv-list-id-'
 const url2 = '-pg-'
 const url3 = '-order--by--year--letter--area--lang-.html'
 
-let v = [8, 5, 17, 6]
-// let v = [7, 9, 10, 11]
+let v = [7, 9, 10, 11, 8, 5, 17, 6]
 let vi = 0
 let i = 1
 const titles = []
@@ -44,7 +43,7 @@ function getTitle(i, vi) {
       if (i <= 5) {
         getTitle(i, vi)
       } else {
-        if (vi < 4) {
+        if (vi < 8) {
           titles.push('\n')
           vi++
           i = 1
