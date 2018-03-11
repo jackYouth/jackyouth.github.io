@@ -1,0 +1,16 @@
+CACHE MANIFEST
+#ver:3e621c4f11e6d794c55d0bf9bbdab4817c1924b2
+#plugin:4.8.4
+
+CACHE:
+https://jackyouth.cdn.com/services/jianli/images/cc.b57c7467.gif
+https://jackyouth.cdn.com/services/jianli/scripts/vendor.bundle.1baa309d.js
+https://jackyouth.cdn.com/services/jianli/scripts/root.3f825666.chunk.js
+https://jackyouth.cdn.com/services/jianli/scripts/bundle.edcfb521.js
+/jianli/index.html
+
+NETWORK:
+*
+
+FALLBACK:
+/ /jianli/
